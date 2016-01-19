@@ -36,14 +36,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="64dp"
-        android:text="Enter the IP of the lock"
+        android:typeface="monospace"
+        android:hint="Enter the IP of the lock"
         android:textAlignment="center" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Set IP"
-        android:id="@+id/button"
+        android:id="@+id/setIP"
+        android:onClick="setIP"
         android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true" />
 

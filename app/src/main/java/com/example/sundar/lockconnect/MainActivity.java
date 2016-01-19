@@ -23,18 +23,29 @@ import java.io.InputStreamReader;
 import java.net.URI;
 
 public class MainActivity extends AppCompatActivity {
-    EditText editText = (EditText)findViewById(R.id.editText);
+
+
+    String ipAddress;
+    EditText ipAdd;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ipAdd = (EditText)findViewById(R.id.editText);
+    }
+
+    public void setIP(View v) {
+
+        ipAddress=ipAdd.getText().toString().trim();
     }
 
     public void button_on(View v) {
         URI url;
         try {
-            url = new URI("http://192.168.1.169/?pin=13");
+            url = new URI("http://"+ipAddress+"/?pin=13");
             sendData msendData = new sendData();
             msendData.execute(url);
         } catch (Exception e) {
